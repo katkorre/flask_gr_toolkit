@@ -49,4 +49,4 @@ def my_form_post():
         for index, value in enumerate(results):
           d[index] = value 
         return d
-app.run()
+app.run(debug=True, host='0.0.0.0')
