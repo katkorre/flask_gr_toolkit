@@ -1,5 +1,7 @@
 from flask import Flask, request, render_template
 from flask_ngrok import run_with_ngrok
+from gr_nlp_toolkit import Pipeline
+nlp = Pipeline("pos,ner,dp")
 app = Flask(__name__)
 run_with_ngrok(app)  
 
