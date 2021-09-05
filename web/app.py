@@ -1,9 +1,8 @@
 from flask import Flask, request, render_template
-from flask_ngrok import run_with_ngrok
 from gr_nlp_toolkit import Pipeline
 nlp = Pipeline("pos,ner,dp")
 app = Flask(__name__)
-run_with_ngrok(app)  
+
 
 
 @app.route('/')
@@ -49,4 +48,3 @@ def my_form_post():
         for index, value in enumerate(results):
           d[index] = value 
         return d
-app.run(debug=True, host='0.0.0.0')
